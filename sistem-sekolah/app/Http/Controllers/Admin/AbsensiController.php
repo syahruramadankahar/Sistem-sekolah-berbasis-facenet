@@ -26,7 +26,7 @@ class AbsensiController extends Controller
         }
 
         if ($request->kelas_id) {
-            $query->whereHas('siswa', function($q) use ($request) {
+            $query->whereHas('siswa', function ($q) use ($request) {
                 $q->where('kelas_id', $request->kelas_id);
             });
         }
@@ -45,7 +45,7 @@ class AbsensiController extends Controller
 
         $absensi = $query->paginate(10);
 
-        return view('admin.absensi.index', compact('absensi','kelas','siswa'));
+        return view('admin.absensi.index', compact('absensi', 'kelas', 'siswa'));
     }
 
 
@@ -67,7 +67,7 @@ class AbsensiController extends Controller
         $kelas = Kelas::orderBy('nama_kelas')->get();
         $siswa = Siswa::orderBy('nama')->get();
 
-        return view('admin.absensi.create', compact('kelas','siswa'));
+        return view('admin.absensi.create', compact('kelas', 'siswa'));
     }
 
 
@@ -118,7 +118,7 @@ class AbsensiController extends Controller
         $kelas = Kelas::orderBy('nama_kelas')->get();
         $siswa = Siswa::orderBy('nama')->get();
 
-        return view('admin.absensi.edit', compact('absen','kelas','siswa'));
+        return view('admin.absensi.edit', compact('absen', 'kelas', 'siswa'));
     }
 
 
@@ -144,8 +144,8 @@ class AbsensiController extends Controller
         if ($request->hasFile('foto_bukti')) {
 
             // hapus foto lama
-            if ($absen->foto_bukti && file_exists(storage_path('app/public/foto_absensi/'.$absen->foto_bukti))) {
-                unlink(storage_path('app/public/foto_absensi/'.$absen->foto_bukti));
+            if ($absen->foto_bukti && file_exists(storage_path('app/public/foto_absensi/' . $absen->foto_bukti))) {
+                unlink(storage_path('app/public/foto_absensi/' . $absen->foto_bukti));
             }
 
             $file = $request->file('foto_bukti');
@@ -172,13 +172,13 @@ class AbsensiController extends Controller
     {
         $absen = Absensi::findOrFail($id);
 
-        if ($absen->foto_bukti && file_exists(storage_path('app/public/foto_absensi/'.$absen->foto_bukti))) {
-            unlink(storage_path('app/public/foto_absensi/'.$absen->foto_bukti));
+        if ($absen->foto_bukti && file_exists(storage_path('app/public/foto_absensi/' . $absen->foto_bukti))) {
+            unlink(storage_path('app/public/foto_absensi/' . $absen->foto_bukti));
         }
 
         $absen->delete();
 
         return redirect()->route('admin.absensi.index')
-                         ->with('success', 'Data absensi berhasil dihapus!');
+            ->with('success', 'Data absensi berhasil dihapus!');
     }
 }

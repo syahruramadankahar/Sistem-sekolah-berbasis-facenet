@@ -56,13 +56,11 @@
                                         <td class="text-center fw-bold text-dark">{{ $key + 1 }}</td>
                                         <td class="text-center">
                                             @if ($item->foto)
-                                                <img src="{{ asset('storage/siswa/' . $item->foto) }}"
-                                                    alt="Foto Siswa"
+                                                <img src="{{ asset('storage/siswa/' . $item->foto) }}" alt="Foto Siswa"
                                                     style="width: 55px; height: 55px; object-fit: cover; border-radius: 8px;">
-                                                @else
-                                                    <img src="https://via.placeholder.com/55x55?text=No+Img"
-                                                        class="rounded"
-                                                        style="opacity: 0.6;">
+                                            @else
+                                                <img src="https://via.placeholder.com/55x55?text=No+Img" class="rounded"
+                                                    style="opacity: 0.6;">
                                             @endif
                                         </td>
                                         <td>
