@@ -462,20 +462,26 @@
                     <div class="card border-0 shadow-sm card-hover">
                         <div class="card-body p-4">
                             <h4 class="card-title"><i class="fas fa-eye me-2"></i>Visi</h4>
-                            <p class="mb-4">Visi yang dimiliki UPT SMKN 1 Bone adalah sebagai berikut: "Generasi Yang
+                            <p class="mb-4" style="text-align: justify;">Visi yang dimiliki UPT SMKN 1 Bone adalah
+                                sebagai berikut: "Generasi Yang
                                 Bertaqwa dan Berdaya Saing".</p>
 
                             <h4 class="card-title"><i class="fas fa-bullseye me-2"></i>Misi</h4>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Menumbuhkan semangat
+                                <li class="mb-2" style="text-align: justify;"><i
+                                        class="fas fa-check text-success me-2"></i>Menumbuhkan semangat
                                     pengalaman imtaq kepada seluruh warga sekolah</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Menjadi teladan untuk
+                                <li class="mb-2" style="text-align: justify;"><i
+                                        class="fas fa-check text-success me-2"></i>Menjadi teladan untuk
                                     mengamalkan akhlak mulia</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Mempersiapkan peserta
+                                <li class="mb-2" style="text-align: justify;"><i
+                                        class="fas fa-check text-success me-2"></i>Mempersiapkan peserta
                                     didik yang berprestasi dibidang akademik dan nonakademik</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Membekali peserta didik
+                                <li class="mb-2" style="text-align: justify;"><i
+                                        class="fas fa-check text-success me-2"></i>Membekali peserta didik
                                     dengan keterampilan sesuai dengan kompetensi keahliannya</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Menyiapkan peserta
+                                <li class="mb-2" style="text-align: justify;"><i
+                                        class="fas fa-check text-success me-2"></i>Menyiapkan peserta
                                     didik yang berdaya saing dalam bekerja</li>
                             </ul>
                         </div>
@@ -485,13 +491,15 @@
                     <h2 class="section-title mb-4">Sejarah</h2>
                     <div class="card border-0 shadow-sm card-hover">
                         <div class="card-body p-4">
-                            <p>SMKN 1 Bone tegak berdiri di Jalan Lapawawoi Kg. Sigeri kabupaten Bone. Sebelumnya
+                            <p style="text-align: justify;">SMKN 1 Bone tegak berdiri di Jalan Lapawawoi Kg. Sigeri
+                                kabupaten Bone. Sebelumnya
                                 bernama SMEA Watampone, mula beroperasi sejak tahun 1965. Sekolah ini terletak pada
                                 situasi geografis yang sangat strategis karena berada di lingkungan perkotaan sehingga
                                 mudah diakses oleh masyarakat. Ada dua jalan utama yang melewati sekolah ini di mana
                                 pada kedua jalan tersebut terdapat berbagai kantor dan sekolah (sekolah dasar, menengah
                                 pertama dan menengah atas) membuatnya memiliki banyak manfaat. </p>
-                            <p>Pada tahun 2021, sekolah ini ditetapkan oleh kementerian pendidikan, riset dan teknologi
+                            <p style="text-align: justify;">Pada tahun 2021, sekolah ini ditetapkan oleh kementerian
+                                pendidikan, riset dan teknologi
                                 melalui direktorat pendidikan vokasi sebagai salah satu SMK Pusat Keunggulan (SMK PK) di
                                 Sulawesi Selatan. </p>
                             <div class="row text-center mt-4">
@@ -514,7 +522,6 @@
             </div>
         </div>
     </section>
-
     <!-- Jurusan -->
     <section class="news-section">
         <div class="container">
@@ -533,7 +540,8 @@
                                 <p class="card-text small">
                                     Tujuan dari konsentrasi DPIB adalah menyelenggarakan sistem pendidikan teknik yang
                                     berkualitas dan beretos kerja tinggi, bekerja sebagai Deafter / Juru gambar dalam
-                                    pekerjaan perencanaan dan pelaksanaan pembangunan, serta mampu berwirausaha di studio
+                                    pekerjaan perencanaan dan pelaksanaan pembangunan, serta mampu berwirausaha di
+                                    studio
                                     gambar.
                                 </p>
                                 <span class="badge badge-custom">128 Siswa</span>
@@ -550,8 +558,10 @@
                                 </div>
                                 <h5 class="card-title">Teknik Jaringan Komputer dan Telekomunikasi</h5>
                                 <p class="card-text small">
-                                    Menghasilkan peserta didik dengan keahlian komputer, jaringan, dan telekomunikasi agar
-                                    dapat bekerja mandiri atau di DUDI, serta mampu berkompetisi dan bersikap profesional.
+                                    Menghasilkan peserta didik dengan keahlian komputer, jaringan, dan telekomunikasi
+                                    agar
+                                    dapat bekerja mandiri atau di DUDI, serta mampu berkompetisi dan bersikap
+                                    profesional.
                                 </p>
                                 <span class="badge badge-custom">309 Siswa</span>
                             </div>
@@ -567,7 +577,8 @@
                                 </div>
                                 <h5 class="card-title">Tata Busana</h5>
                                 <p class="card-text small">
-                                    Mempersiapkan peserta didik menjadi manusia yang produktif, mampu bekerja mandiri, dan
+                                    Mempersiapkan peserta didik menjadi manusia yang produktif, mampu bekerja mandiri,
+                                    dan
                                     dapat diserap oleh DUDI dengan keahlian di bidang busana serta wirausaha.
                                 </p>
                                 <span class="badge badge-custom">108 Siswa</span>
@@ -584,7 +595,8 @@
                                 </div>
                                 <h5 class="card-title">Kuliner</h5>
                                 <p class="card-text small">
-                                    Membekali peserta didik agar kompeten dalam mengolah, menyajikan, dan mengelola usaha
+                                    Membekali peserta didik agar kompeten dalam mengolah, menyajikan, dan mengelola
+                                    usaha
                                     kuliner, serta siap bekerja di industri makanan dan minuman.
                                 </p>
                                 <span class="badge badge-custom">21 Siswa</span>
@@ -698,7 +710,8 @@
                             <img src="{{ asset('image/fasilitas/ict.jpg') }}" class="card-img-top" alt="ICT Center">
                             <div class="card-body text-center">
                                 <h5 class="card-title">ICT Center</h5>
-                                <p class="card-text small">Pusat kegiatan teknologi informasi dan komunikasi sekolah.</p>
+                                <p class="card-text small">Pusat kegiatan teknologi informasi dan komunikasi sekolah.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -721,7 +734,8 @@
                                 alt="Perpustakaan">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Perpustakaan</h5>
-                                <p class="card-text small">Koleksi buku fisik dan digital untuk mendukung pembelajaran.</p>
+                                <p class="card-text small">Koleksi buku fisik dan digital untuk mendukung pembelajaran.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -732,7 +746,8 @@
                                 alt="Mushallah">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Mushallah</h5>
-                                <p class="card-text small">Fasilitas ibadah yang bersih dan nyaman untuk warga sekolah.</p>
+                                <p class="card-text small">Fasilitas ibadah yang bersih dan nyaman untuk warga sekolah.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -781,8 +796,8 @@
                     <div class="swiper-slide">
                         <div class="card border-0 shadow-sm text-center card-hover">
                             <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png"
-                                class="guru-img rounded-circle mx-auto mt-3" alt="Wakil Kepala Sekolah" width="120"
-                                height="120">
+                                class="guru-img rounded-circle mx-auto mt-3" alt="Wakil Kepala Sekolah"
+                                width="120" height="120">
                             <div class="card-body">
                                 <h5 class="card-title">Dra. BUNGAWATI, M.M</h5>
                                 <p class="card-text text-muted">Wakil Kepala Sekolah</p>
@@ -1066,7 +1081,8 @@
                                     <i class="fas fa-campground"></i>
                                 </div>
                                 <h5 class="card-title">Pramuka</h5>
-                                <p class="card-text">Melatih kedisiplinan, tanggung jawab, dan kemandirian melalui kegiatan
+                                <p class="card-text">Melatih kedisiplinan, tanggung jawab, dan kemandirian melalui
+                                    kegiatan
                                     kepramukaan.</p>
                                 <span class="badge badge-custom">Pembina: H. Syamsuddin, S.Pd, M.Pd</span>
                             </div>
@@ -1080,7 +1096,8 @@
                                     <i class="fas fa-shield-alt"></i>
                                 </div>
                                 <h5 class="card-title">PKS</h5>
-                                <p class="card-text">Patroli Keamanan Sekolah yang berperan dalam menjaga ketertiban dan
+                                <p class="card-text">Patroli Keamanan Sekolah yang berperan dalam menjaga ketertiban
+                                    dan
                                     disiplin siswa.</p>
                                 <span class="badge badge-custom">Pembina: Dra. Bungawati, M.M</span>
                             </div>
@@ -1094,7 +1111,8 @@
                                     <i class="fas fa-drum"></i>
                                 </div>
                                 <h5 class="card-title">Marching Band</h5>
-                                <p class="card-text">Melatih kekompakan dan musikalitas melalui seni musik barisan dan drum
+                                <p class="card-text">Melatih kekompakan dan musikalitas melalui seni musik barisan dan
+                                    drum
                                     band.</p>
                                 <span class="badge badge-custom">Pembina: Hj. Fatmawati, S.Pd</span>
                             </div>
@@ -1136,7 +1154,8 @@
                                     <i class="fas fa-microphone"></i>
                                 </div>
                                 <h5 class="card-title">PERSEPSI</h5>
-                                <p class="card-text">Perkumpulan Seni dan Prestasi Siswa yang menyalurkan bakat dalam seni
+                                <p class="card-text">Perkumpulan Seni dan Prestasi Siswa yang menyalurkan bakat dalam
+                                    seni
                                     dan budaya.</p>
                                 <span class="badge badge-custom">Pembina: Hj. Rosmidah, S.Pd</span>
                             </div>
@@ -1164,7 +1183,8 @@
                                     <i class="fas fa-mountain"></i>
                                 </div>
                                 <h5 class="card-title">SISPALA</h5>
-                                <p class="card-text">Siswa Pecinta Alam yang mencintai lingkungan dan mengasah keterampilan
+                                <p class="card-text">Siswa Pecinta Alam yang mencintai lingkungan dan mengasah
+                                    keterampilan
                                     bertahan di alam bebas.</p>
                                 <span class="badge badge-custom">Pembina: Fajar, S.Pd., M.Pd.</span>
                             </div>
@@ -1315,7 +1335,7 @@
         $(window).scroll(checkScroll);
 
         // ===== INISIALISASI SWIPER SLIDER =====
-        
+
         // Slider Jurusan
         const jurusanSlider = new Swiper('.jurusan-slider', {
             slidesPerView: 1,

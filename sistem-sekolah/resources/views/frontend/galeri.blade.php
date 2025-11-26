@@ -307,57 +307,57 @@
         .galeri-item {
             transition: transform 0.3s ease;
         }
-        
+
         /* ===== MODAL STYLING ===== */
         .modal-content {
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        
+
         .modal-header {
             background-color: var(--primary-blue);
             color: white;
             border-bottom: 2px solid var(--accent-gold);
         }
-        
+
         .modal-header .btn-close {
             filter: invert(1);
         }
-        
+
         .modal-body {
             padding: 0;
             position: relative;
         }
-        
+
         .modal-image {
             width: 100%;
             height: auto;
             max-height: 70vh;
             object-fit: contain;
         }
-        
+
         .modal-footer {
             background-color: var(--light-gray);
             border-top: 1px solid var(--medium-gray);
         }
-        
+
         .image-info {
             padding: 1rem;
         }
-        
+
         .image-title {
             font-size: 1.25rem;
             font-weight: 600;
             color: var(--primary-blue);
             margin-bottom: 0.5rem;
         }
-        
+
         .image-date {
             color: var(--dark-gray);
             font-size: 0.9rem;
         }
-        
+
         /* ===== LOADING SPINNER ===== */
         .loading-spinner {
             display: none;
@@ -367,7 +367,7 @@
             transform: translate(-50%, -50%);
             z-index: 10;
         }
-        
+
         .spinner-border {
             width: 3rem;
             height: 3rem;
@@ -425,15 +425,17 @@
             <div class="row" id="galeri-grid">
                 @foreach ($galeri as $ga)
                     <div class="col-lg-4 col-md-6 mb-4 fade-in galeri-item" data-category="kegiatan">
-                        <div class="card border-0 shadow-sm card-hover" data-bs-toggle="modal" data-bs-target="#imageModal" 
-                             data-image="{{ asset('storage/' . $ga->gambar) }}" 
-                             data-title="{{ $ga->judul }}" 
-                             data-date="{{ $ga->tanggal }}">
-                            <img src="{{ asset('storage/' . $ga->gambar) }}" class="card-img-top"
-                                alt="{{ $ga->judul }}">
-                            <div class="card-body">
+                        <div class="card border-0 shadow-sm card-hover h-100" data-bs-toggle="modal"
+                            data-bs-target="#imageModal" data-image="{{ asset('storage/' . $ga->gambar) }}"
+                            data-title="{{ $ga->judul }}" data-date="{{ $ga->tanggal }}">
+                            <!-- Gambar dengan rasio tetap menggunakan Bootstrap -->
+                            <div class="ratio ratio-4x3">
+                                <img src="{{ asset('storage/' . $ga->gambar) }}" class="card-img-top object-fit-cover"
+                                    alt="{{ $ga->judul }}">
+                            </div>
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $ga->judul }}</h5>
-                                <small class="text-muted">{{ $ga->tanggal }}</small>
+                                <small class="text-muted mt-auto">{{ $ga->tanggal }}</small>
                             </div>
                         </div>
                     </div>
@@ -630,15 +632,15 @@
                 const imageUrl = this.getAttribute('data-image');
                 const title = this.getAttribute('data-title');
                 const date = this.getAttribute('data-date');
-                
+
                 // Tampilkan loading spinner
                 modalLoading.style.display = 'block';
                 modalImage.style.opacity = '0';
-                
+
                 // Set data ke modal
                 modalTitle.textContent = title;
                 modalDate.textContent = date;
-                
+
                 // Preload gambar
                 const img = new Image();
                 img.onload = function() {
@@ -648,7 +650,7 @@
                     modalImage.style.opacity = '1';
                 };
                 img.src = imageUrl;
-                
+
                 // Tampilkan modal
                 imageModal.show();
             });
