@@ -1095,6 +1095,7 @@
                         <li class="mb-2"><a href="{{ url('/profil') }}">Profil</a></li>
                         <li class="mb-2"><a href="{{ url('/berita') }}">Berita</a></li>
                         <li class="mb-2"><a href="{{ url('/galeri') }}">Galeri</a></li>
+                        <li class="mb-2"><a href="{{ url('/kontak') }}">Kontak</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-3 col-md-6 mb-4">

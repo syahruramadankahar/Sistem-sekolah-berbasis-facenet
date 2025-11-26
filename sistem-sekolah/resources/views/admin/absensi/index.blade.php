@@ -12,68 +12,6 @@
             </div>
         </div>
 
-        {{-- FILTER SECTION --}}
-        <div class="card shadow-sm mb-4">
-            <div class="card-body">
-
-                <form method="GET">
-                    <div class="row g-3">
-
-                        <div class="col-md-3">
-                            <label class="form-label fw-semibold">Tanggal</label>
-                            <input type="date" name="tanggal" class="form-control" value="{{ request('tanggal') }}">
-                        </div>
-
-                        <div class="col-md-3">
-                            <label class="form-label fw-semibold">Kelas</label>
-                            <select name="kelas_id" class="form-select">
-                                <option value="">Semua</option>
-                                @foreach ($kelas as $k)
-                                    <option value="{{ $k->id }}"
-                                        {{ request('kelas_id') == $k->id ? 'selected' : '' }}>
-                                        {{ $k->nama }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label class="form-label fw-semibold">Siswa</label>
-                            <select name="siswa_id" class="form-select">
-                                <option value="">Semua</option>
-                                @foreach ($siswa as $s)
-                                    <option value="{{ $s->id }}"
-                                        {{ request('siswa_id') == $s->id ? 'selected' : '' }}>
-                                        {{ $s->nama }}
-                                    </option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="col-md-3">
-                            <label class="form-label fw-semibold">Metode</label>
-                            <select name="metode" class="form-select">
-                                <option value="">Semua</option>
-                                <option value="wajah" {{ request('metode') == 'wajah' ? 'selected' : '' }}>
-                                    Wajah
-                                </option>
-                                <option value="manual" {{ request('metode') == 'manual' ? 'selected' : '' }}>
-                                    Manual
-                                </option>
-                            </select>
-                        </div>
-
-                    </div>
-
-                    <button class="btn btn-primary mt-3">
-                        <i class="bi bi-funnel-fill me-1"></i> Filter
-                    </button>
-
-                </form>
-
-            </div>
-        </div>
-
         <div class="card card-round mb-4">
             <div class="card-body d-flex justify-content-between align-items-center">
                 <h4 class="mb-0 fw-bold">Data Absensi</h4>

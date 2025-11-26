@@ -27,7 +27,7 @@ class SiswaController extends Controller
     {
         $request->validate([
             'nama'     => 'required',
-            'nis'      => 'required|unique:siswas,nis',
+            'nis'      => 'required|unique:siswa,nis',
             'kelas_id' => 'required|integer',
             'jurusan'  => 'required',
             'alamat'   => 'nullable',
@@ -40,7 +40,7 @@ class SiswaController extends Controller
         // Upload Foto
         if ($request->hasFile('foto')) {
             $filename = time() . '.' . $request->foto->extension();
-            $request->foto->storeAs('storage/siswa', $filename, 'public');
+            $request->foto->storeAs('siswa', $filename, 'public');
             $data['foto'] = $filename;
         }
 
