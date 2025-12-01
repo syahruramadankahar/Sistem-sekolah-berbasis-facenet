@@ -45,7 +45,6 @@ PUBLIC_URL = "http://127.0.0.1:8000/storage/foto_absensi/"
 # ======================================
 class AbsensiRequest(BaseModel):
     gambar: str
-    tipe: str
     siswa_id: int
     foto_url: str
 
@@ -96,60 +95,88 @@ async def absensi_wajah(data: AbsensiRequest):
 
     print("\n========== REQUEST MASUK ==========")
     print("Siswa ID :", data.siswa_id)
-    print("Tipe     :", data.tipe)
     print("Foto DB  :", data.foto_url)
     print("===================================\n")
 
     # 1. Decode gambar kamera
     try:
         img_kamera = decode_base64_to_image(data.gambar)
-    except:
-        return {"status": "error", "message": "Gagal membaca gambar kamera"}
+    except Exception as e:
+        print(f"[ERROR] Gagal decode gambar: {e}")
+        return {
+            "status": "error", 
+            "verified": False,
+            "message": "Gagal membaca gambar kamera"
+        }
 
     # 2. Download foto siswa dari Laravel
     img_siswa = download_image(data.foto_url)
     if img_siswa is None:
-        return {"status": "error", "message": "Tidak bisa mengambil foto siswa dari server Laravel"}
+        print("[ERROR] Gagal download foto siswa")
+        return {
+            "status": "error", 
+            "verified": False,
+            "message": "Tidak bisa mengambil foto siswa dari server Laravel"
+        }
 
     # 3. Embedding kamera
     emb_kamera = get_embedding(img_kamera)
     if emb_kamera is None:
-        return {"status": "error", "message": "Wajah tidak terdeteksi di kamera"}
+        print("[ERROR] Wajah tidak terdeteksi di kamera")
+        return {
+            "status": "error", 
+            "verified": False,
+            "similarity": "0%",
+            "message": "Wajah tidak terdeteksi di kamera"
+        }
 
     # 4. Embedding foto siswa
     emb_siswa = get_embedding(img_siswa)
     if emb_siswa is None:
-        return {"status": "error", "message": "Wajah tidak terdeteksi pada foto siswa"}
+        print("[ERROR] Wajah tidak terdeteksi pada foto siswa")
+        return {
+            "status": "error", 
+            "verified": False,
+            "similarity": "0%",
+            "message": "Wajah tidak terdeteksi pada foto siswa"
+        }
 
     # 5. Similarity check
     sim = cosine_similarity(emb_kamera, emb_siswa)
     THRESHOLD = 0.68
     verified = sim >= THRESHOLD
 
-    print(f"[INFO] Similarity = {sim:.4f}")
+    print(f"[INFO] Similarity = {sim:.4f} (Threshold: {THRESHOLD})")
 
     # 6. Simpan foto bukti langsung ke storage Laravel
-    filename = f"{data.siswa_id}_{data.tipe}_{int(datetime.now().timestamp())}.jpg"
+    filename = f"{data.siswa_id}_{int(datetime.now().timestamp())}.jpg"
     save_path = os.path.join(LARAVEL_STORAGE, filename)
-    img_kamera.save(save_path)
+    
+    try:
+        img_kamera.save(save_path)
+        print(f"[INFO] Foto disimpan: {save_path}")
+    except Exception as e:
+        print(f"[ERROR] Gagal menyimpan foto: {e}")
 
     # URL publik untuk disimpan ke database Laravel
     public_url = PUBLIC_URL + filename
 
     if verified:
+        print("[SUCCESS] Wajah terverifikasi!")
         return {
             "status": "success",
             "verified": True,
-            "similarity": sim,
-            "foto_bukti": filename,       # hanya kirim filename
-            "foto_bukti_url": public_url, # URL publik
+            "similarity": f"{sim*100:.1f}%",
+            "foto_bukti": filename,
+            "foto_bukti_url": public_url,
             "message": "Wajah cocok! Absensi boleh dicatat."
         }
 
+    print("[FAILED] Wajah tidak cocok")
     return {
         "status": "failed",
         "verified": False,
-        "similarity": sim,
+        "similarity": f"{sim*100:.1f}%",
         "foto_bukti": filename,
         "foto_bukti_url": public_url,
         "message": "Wajah tidak cocok."
@@ -159,3 +186,8 @@ async def absensi_wajah(data: AbsensiRequest):
 @app.get("/")
 def home():
     return {"status": "running", "message": "FastAPI aktif"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="127.0.0.1", port=8001, reload=True)

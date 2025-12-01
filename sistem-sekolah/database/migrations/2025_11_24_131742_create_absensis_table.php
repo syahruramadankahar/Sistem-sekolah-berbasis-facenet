@@ -16,10 +16,10 @@ return new class extends Migration
             $table->foreign('siswa_id')
                 ->references('id')
                 ->on('siswa')
-                ->onDelete('cascade'); 
+                ->onDelete('cascade');
 
             // Status kehadiran
-            $table->enum('status', ['hadir', 'izin', 'alpha'])->default('hadir');
+            $table->enum('status', ['hadir', 'sakit', 'izin', 'alpha'])->default('hadir');
 
             // Foto bukti dari kamera / FastAPI
             $table->string('foto_bukti')->nullable();

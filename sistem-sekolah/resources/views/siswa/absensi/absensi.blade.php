@@ -20,7 +20,7 @@
 
         <!-- Stats Cards -->
         <div class="row mb-4">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card stat-card"
                     style="background: linear-gradient(135deg, #27ae60, #2ecc71); border: none; border-radius: 12px;">
                     <div class="card-body text-white p-3">
@@ -37,9 +37,26 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card stat-card"
                     style="background: linear-gradient(135deg, #f39c12, #f1c40f); border: none; border-radius: 12px;">
+                    <div class="card-body text-white p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <h4 class="fw-bold mb-0">{{ $absensi->where('status', 'sakit')->count() }}</h4>
+                                <p class="mb-0" style="font-size: 13px; opacity: 0.9;">Sakit</p>
+                            </div>
+                            <div class="icon-circle"
+                                style="background: rgba(255,255,255,0.2); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-thermometer-half" style="font-size: 18px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stat-card"
+                    style="background: linear-gradient(135deg, #3498db, #2980b9); border: none; border-radius: 12px;">
                     <div class="card-body text-white p-3">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
@@ -48,13 +65,13 @@
                             </div>
                             <div class="icon-circle"
                                 style="background: rgba(255,255,255,0.2); width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-exclamation" style="font-size: 18px;"></i>
+                                <i class="fas fa-file-alt" style="font-size: 18px;"></i>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <div class="card stat-card"
                     style="background: linear-gradient(135deg, #e74c3c, #c0392b); border: none; border-radius: 12px;">
                     <div class="card-body text-white p-3">
@@ -129,10 +146,15 @@
                                                 style="background: #27ae60; color: white; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500;">
                                                 <i class="fas fa-check-circle me-1"></i>Hadir
                                             </span>
-                                        @elseif($item->status == 'izin')
+                                        @elseif($item->status == 'sakit')
                                             <span class="badge status-badge"
                                                 style="background: #f39c12; color: white; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500;">
-                                                <i class="fas fa-exclamation-circle me-1"></i>Izin
+                                                <i class="fas fa-thermometer-half me-1"></i>Sakit
+                                            </span>
+                                        @elseif($item->status == 'izin')
+                                            <span class="badge status-badge"
+                                                style="background: #3498db; color: white; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 500;">
+                                                <i class="fas fa-file-alt me-1"></i>Izin
                                             </span>
                                         @else
                                             <span class="badge status-badge"
