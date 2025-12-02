@@ -56,25 +56,29 @@
                                         <td style="padding: 16px 20px;">
                                             @if ($item->status == 'hadir')
                                                 <span class="badge status-badge"
-                                                    style="background: #27ae60; color: white; padding: 6px 12px; border-radius :20px; font-size: 12px; font-weight: 500;">
+                                                    style="background: #27ae60; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
                                                     <i class="fas fa-check-circle me-1"></i>Hadir
+                                                </span>
+                                            @elseif($item->status == 'sakit')
+                                                <span class="badge status-badge"
+                                                    style="background: #f39c12; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
+                                                    <i class="fas fa-thermometer-half me-1"></i>Sakit
                                                 </span>
                                             @elseif($item->status == 'izin')
                                                 <span class="badge status-badge"
-                                                    style="background: #f39c12; color: white; padding: 6px 12px; border-radius :20px; font-size: 12px; font-weight: 500;">
-                                                    <i class="fas fa-exclamation-circle me-1"></i>Izin
+                                                    style="background: #3498db; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
+                                                    <i class="fas fa-file-alt me-1"></i>Izin
                                                 </span>
                                             @else
                                                 <span class="badge status-badge"
-                                                    style="background: #e74c3c; color: white; padding: 6px 12px; border-radius :20px; font-size: 12px; font-weight: 500;">
+                                                    style="background: #e74c3c; color: white; padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500;">
                                                     <i class="fas fa-times-circle me-1"></i>Alpha
                                                 </span>
                                             @endif
                                         </td>
 
                                         <td class="text-center">
-                                            <span
-                                                class="badge method-badge bg-primary ">{{ ucfirst($item->metode) }}</span>
+                                            <span class="badge method-badge bg-primary ">{{ ucfirst($item->metode) }}</span>
                                         </td>
 
                                         <td class="text-center">

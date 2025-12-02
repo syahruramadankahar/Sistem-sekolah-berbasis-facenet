@@ -29,6 +29,7 @@
                             <label class="form-label">Status</label>
                             <select name="status" class="form-control" required>
                                 <option value="hadir">Hadir</option>
+                                <option value="sakit">Sakit</option>
                                 <option value="izin">Izin</option>
                                 <option value="alpha">Alpha</option>
                             </select>

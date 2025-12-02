@@ -78,7 +78,7 @@ class AbsensiController extends Controller
     {
         $request->validate([
             'siswa_id'   => 'required|exists:siswa,id',
-            'status'     => 'required|in:hadir,izin,alpha',
+            'status'     => 'required|in:hadir,sakit,izin,alpha',
             'metode'     => 'required|in:wajah,manual',
             'foto_bukti' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
@@ -129,7 +129,7 @@ class AbsensiController extends Controller
     {
         $request->validate([
             'siswa_id' => 'required|integer',
-            'status'   => 'required|string',
+            'status'   => 'required|in:hadir,sakit,izin,alpha',
             'metode'   => 'required|string',
             'foto_bukti' => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
         ]);
