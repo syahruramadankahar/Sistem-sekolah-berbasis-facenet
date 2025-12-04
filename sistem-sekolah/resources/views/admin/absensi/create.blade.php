@@ -38,7 +38,6 @@
                         <div class="col-md-4 mb-3">
                             <label class="form-label">Metode</label>
                             <select name="metode" class="form-control" required>
-                                <option value="wajah">Wajah</option>
                                 <option value="manual">Manual</option>
                             </select>
                         </div>

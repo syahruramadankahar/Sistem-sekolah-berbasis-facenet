@@ -44,7 +44,6 @@
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Metode Absensi</label>
                         <select name="metode" class="form-select" required>
-                            <option value="wajah" {{ $absen->metode == 'wajah' ? 'selected' : '' }}>Wajah</option>
                             <option value="manual" {{ $absen->metode == 'manual' ? 'selected' : '' }}>Manual</option>
                         </select>
                     </div>
